@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+       <center> <h1>ToDo-List</h1></center>
+<input  class="inputbox "id="inputBox" type="text">
+<button class="btn" id="btn">Add</button>
+
+<ul id="container">
+    <li>Hello
+        <button class="btn1" onclick="deletIteam(event)">Dellet</button>
+    </li>
+
+</ul>
+<script>
+    var inputBox = document.getElementById("inputBox")
+    var btn = document.getElementById("btn")
+    var container = document.getElementById("container")
+
+    btn.addEventListener("click",function(){
+         var li = document.createElement("li")
+         li.innerHTML = inputBox.value +"<button "+" class="+"btn1 onclick="+"deletIteam(event)"+">Delete</button>"
+         container.append(li)
+    })
+
+    function deletIteam(event)
+    {
+      event.target.parentElement.remove()
+    }
+</script>
+</div>
+</body>
+</html>
